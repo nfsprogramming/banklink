@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+  --color-primary-950: #082f49;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+    background-color: var(--color-primary-600);
+  }
+  .btn-primary:active {
+    transform: scale(0.95);
+  }
+  .btn-primary:hover:not(:disabled) {
+    background-color: var(--color-primary-500);
+  }
+
+  .btn-secondary {
+    @apply flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition-all hover:bg-slate-50 active:scale-95;
+  }
+  
+  .card {
+    @apply rounded-xl border border-slate-200 bg-white p-6 shadow-sm ring-1 ring-slate-950/5;
+  }
+  
+  .input-field {
+    @apply w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm placeholder-slate-400 shadow-sm outline-none transition-all;
+  }
+  .input-field:focus {
+    border-color: var(--color-primary-500);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary-500) 10%, transparent);
+  }
+  
+  .label-text {
+    @apply mb-1.5 block text-sm font-medium text-slate-700;
+  }
+}
+
+
+
+/* Glassmorphism utility */
+.glass {
+  @apply bg-white/70 backdrop-blur-md border border-white/20;
+}
