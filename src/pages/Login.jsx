@@ -31,7 +31,7 @@ const Login = () => {
 
   return (
     <div className="flex h-full min-h-[calc(100vh-12rem)] items-center justify-center py-10">
-      <div className="card w-full max-w-md bg-white shadow-2xl p-10 ring-1 ring-slate-950/5 border-inherit">
+      <div className="card w-full max-w-md bg-white shadow-2xl p-6 sm:p-10 ring-1 ring-slate-950/5 border-inherit">
         <div className="mb-10 text-center">
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-primary-600 text-white shadow-xl shadow-primary-500/20 mb-6 group transition-all duration-300">
             <ShieldCheck size={32} className="transition-transform group-hover:scale-110" />

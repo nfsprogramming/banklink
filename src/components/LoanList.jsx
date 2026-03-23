@@ -80,7 +80,7 @@ const LoanList = ({ loans, isAdmin = false, onAction = null }) => {
               </div>
             </div>
 
-            <div className="flex flex-col items-end gap-1 text-right">
+            <div className="flex flex-col items-start gap-1 text-left sm:items-end sm:text-right mt-4 sm:mt-0 p-4 sm:p-0 bg-slate-50/50 sm:bg-transparent rounded-xl">
               <span className="text-2xl font-black text-slate-900 tracking-tight">${loan.amount.toLocaleString()}</span>
               <span className="flex items-center gap-1.5 text-xs font-bold text-primary-600 uppercase tracking-widest">
                 <Calculator size={12} />

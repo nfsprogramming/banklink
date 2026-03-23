@@ -112,13 +112,13 @@ const AdminPanel = ({ user }) => {
       </div>
 
       <div className="space-y-8">
-        <div className="flex flex-wrap items-center justify-between gap-6 border-b border-slate-200 pb-4">
-          <div className="flex gap-1 bg-slate-100 p-1 rounded-xl w-fit">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-b border-slate-200 pb-4">
+          <div className="flex gap-1 bg-slate-100 p-1 rounded-xl w-full sm:w-fit overflow-x-auto hide-scrollbar">
             {['all', 'pending', 'approved', 'rejected'].map(tab => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-5 py-2.5 text-xs font-bold uppercase tracking-wider rounded-lg transition-all ${
+                className={`px-4 sm:px-5 py-2.5 text-xs font-bold uppercase tracking-wider rounded-lg transition-all whitespace-nowrap flex-1 sm:flex-none ${
                   activeTab === tab 
                   ? 'bg-white text-primary-600 shadow-sm ring-1 ring-slate-950/5' 
                   : 'text-slate-500 hover:text-slate-700'
@@ -129,16 +129,16 @@ const AdminPanel = ({ user }) => {
             ))}
           </div>
           
-          <div className="flex items-center gap-3">
-            <div className="relative">
+          <div className="flex items-center gap-3 w-full sm:w-auto">
+            <div className="relative flex-1 sm:flex-none">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
               <input 
                 type="text" 
                 placeholder="Search Client ID..." 
-                className="rounded-lg border border-slate-200 bg-white pl-10 pr-4 py-2 text-sm shadow-sm outline-none focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 w-64"
+                className="rounded-lg border border-slate-200 bg-white pl-10 pr-4 py-2 text-sm shadow-sm outline-none focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 w-full sm:w-64"
               />
             </div>
-            <button className="p-2 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">
+            <button className="p-2 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors shrink-0">
               <FilterIcon size={18} className="text-slate-500" />
             </button>
           </div>

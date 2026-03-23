@@ -31,10 +31,10 @@ const Navbar = ({ currentUser, userRole }) => {
           <div className="flex items-center gap-4">
             <Link 
               to={userRole === 'admin' ? '/admin' : '/dashboard'} 
-              className="flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-primary-600 transition-colors"
+              className="flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-primary-600 transition-colors bg-slate-100/50 sm:bg-transparent px-3 py-1.5 rounded-lg sm:p-0"
             >
               <LayoutDashboard size={18} />
-              {userRole === 'admin' ? 'Admin Panel' : 'Dashboard'}
+              <span className="hidden sm:inline">{userRole === 'admin' ? 'Admin Panel' : 'Dashboard'}</span>
             </Link>
             
             <div className="h-6 w-px bg-slate-200" />
